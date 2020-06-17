@@ -12,8 +12,6 @@ def single_number(arr):
         if c == 1:
             return i
 
-    # when there isn't a duplicate, return it
-
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
