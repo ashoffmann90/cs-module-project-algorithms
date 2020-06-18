@@ -7,21 +7,28 @@ Write a function that receives an array of integers and returns an array consist
 
 def product_of_all_other_numbers(arr):
     # Your code here
-    # m = []
+    # create arrays to
+    length = len(arr)
+    l = [0] * length
+    r = [0] * length
+    t = [0] * length
+    l[0] = 1
+    for a in range(1, length):
+        l[a] = arr[a - 1] * l[a - 1]
+
+    r[length - 1] = 1
+    for b in reversed(range(length - 1)):
+        r[b] = arr[b + 1] * r[b + 1]
+
+    for c in range(length):
+        t[c] = l[c] * r[c]
+
+    return t
+
     # r = 1
-    #     for i in arr:
-    #         for x in arr:
-
-    r = 1
-    for i in arr:
-        r *= i
-    return [r / n for n in arr]
-
-    # find the element at each index
-    # multiply every element in array minus the current index
-    # point to current_index
-    # increment index each time
-    # remove that index
+    # for i in arr:
+    #     r *= i
+    # return [r / n for n in arr]
 
 
 if __name__ == '__main__':
